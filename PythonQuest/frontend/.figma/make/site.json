@@ -1,0 +1,10 @@
+{
+  "description": "Embark on a magical journey to learn Python through engaging, story-driven lessons and quests, designed for aspiring coders of all ages.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

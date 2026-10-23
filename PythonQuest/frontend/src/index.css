@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Nunito:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-island-sky: #1a3a5c;
+  --color-island-ocean: #1e6b8c;
+  --color-island-sand: #f5e6c8;
+  --color-island-parchment: #fdf3dc;
+  --color-island-green: #2d6a2d;
+  --color-island-gold: #d4a017;
+  --color-island-glow: #4ade80;
+  --color-island-purple: #7c3aed;
+  --color-island-dark: #0d1f35;
+  --font-display: 'Cinzel Decorative', serif;
+  --font-body: 'Nunito', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Glowing gold button */
+.btn-adventure {
+  position: relative;
+  background: linear-gradient(135deg, #1a5c2a 0%, #2d8a3e 50%, #1a5c2a 100%);
+  border: 3px solid #d4a017;
+  border-radius: 9999px;
+  padding: 16px 48px;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  box-shadow:
+    0 0 20px rgba(74, 222, 128, 0.6),
+    0 0 40px rgba(74, 222, 128, 0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: all 0.2s ease;
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
+}
+
+.btn-adventure:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 0 30px rgba(74, 222, 128, 0.9),
+    0 0 60px rgba(74, 222, 128, 0.5),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.btn-adventure::before,
+.btn-adventure::after {
+  content: '❖';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d4a017;
+  font-size: 1rem;
+  text-shadow: 0 0 8px #d4a017;
+}
+.btn-adventure::before { left: 16px; }
+.btn-adventure::after  { right: 16px; }
+
+/* Secondary button */
+.btn-trailer {
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 9999px;
+  padding: 16px 40px;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+.btn-trailer:hover {
+  background: rgba(255,255,255,0.22);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Scroll panel */
+.scroll-panel {
+  background: linear-gradient(180deg, #fdf3dc 0%, #f5e6c8 100%);
+  border: 2px solid #c8a86b;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, rgba(212, 160, 23, 0.4), transparent);
+}
+
+/* Feature card */
+.feature-card {
+  background: linear-gradient(180deg, rgba(253,243,220,0.95) 0%, rgba(245,230,200,0.95) 100%);
+  border: 2px solid rgba(200, 168, 107, 0.7);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* Scrollbar hide */
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
+
+/* Particle sparkle */
+@keyframes float-up {
+  0%   { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-60px) scale(0.3); }
+}
+.sparkle {
+  animation: float-up 2.5s ease-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+.glow-pulse {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
